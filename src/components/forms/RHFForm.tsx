@@ -1,17 +1,13 @@
 import { useForm } from "react-hook-form";
+import type { FormValues } from '../../types/types'
+import { useDispatch } from "react-redux";
+import { addSubmission } from "../../store/formSlice";
 
-type FormValues = {
-  name: string;
-  age: number;
-  gender: string;
-  email: string;
-  country: string;
-  password: string;
-  image: FileList;
-  terms: boolean;
+type Props = {
+  onSuccess: () => void;
 };
 
-export default function RHFForm() {
+export default function RHFForm({ onSuccess }: Props) {
   const {
     register,
     handleSubmit,
@@ -19,8 +15,17 @@ export default function RHFForm() {
     mode: "onChange",
   });
 
+  const dispatch = useDispatch();
+
   const onSubmit = (data: FormValues) => {
-    console.log("RHF submit:", data);
+   dispatch (
+    addSubmission({
+      id: crypto.randomUUID(),
+      type: "rhf",
+      data,
+      })
+   );
+   onSuccess();
   };
 
   return (
@@ -60,7 +65,7 @@ export default function RHFForm() {
         <input
           type="file"
           accept="image/png, image/jpeg"
-          {...register("image")}
+          /* {...register("image")} */
         />
       </div>
 

@@ -3,9 +3,14 @@ import "./main.css";
 import Modal from '../modal/Modal'
 import UncontrolledForm from '../forms/UncontrolledForm'
 import RHFForm from '../forms/RHFForm'
+import { useSelector } from "react-redux";
+import type { RootState } from "../../store/store";
 
 export default function Main() {
     const [modalType, setModalType] = useState<"uncontrolled" | "rhf" | null>(null);
+
+    const submissions = useSelector((state: RootState) => state.form.submissions);
+
     return (
         <div className="main-wrapper">
             <div className="buttons-div">
@@ -14,6 +19,16 @@ export default function Main() {
             </div>
             <div className="Submissions">
                 <h2>Submissions</h2>
+                <div className="submission-div">
+                  {submissions.map((item) => (
+                    <div key={item.id} className="submission-card">
+                    <p><b>Name:</b> {item.data.name}</p>
+                    <p><b>Email:</b> {item.data.email}</p>
+                    <p><b>Age:</b> {item.data.age}</p>
+                    <p><b>Country:</b> {item.data.country}</p>
+                    </div>
+                  ))} 
+                </div>
             </div>
              {modalType && (
             <Modal
@@ -25,9 +40,9 @@ export default function Main() {
                 onClose={() => setModalType(null)}
             >
                 {modalType === "uncontrolled" ? (
-                  <UncontrolledForm />
+                  <UncontrolledForm onSuccess={() => setModalType(null)} />
                 ) : (
-                  <RHFForm />
+                  <RHFForm onSuccess={() => setModalType(null)} />
                 )}
             </Modal>
             )}

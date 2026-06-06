@@ -1,16 +1,37 @@
-export default function UncontrolledForm () {
+import { useDispatch } from "react-redux";
+import { addSubmission } from "../../store/formSlice";
+
+type Props = {
+  onSuccess: () => void;
+};
+
+export default function UncontrolledForm ({ onSuccess }: Props) {
+    const dispatch = useDispatch();
+
     const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
     const formData = new FormData(e.currentTarget);
 
-    const data = {
-      name: formData.get("name"),
-      age: formData.get("age"),
-      email: formData.get("email"),
+      const data = {
+        name: String(formData.get("name")),
+        age: Number(formData.get("age")),
+        gender: String(formData.get("gender")),
+        email: String(formData.get("email")),
+        country: String(formData.get("country")),
+        password: String(formData.get("password")),
+        terms: formData.get("terms") === "on",
+        /* image: */
     };
 
-    console.log("Uncontrolled submit:", data);
+     dispatch (
+      addSubmission({
+        id: crypto.randomUUID(),
+        type: "uncontrolled",
+        data,
+      })
+    );
+    onSuccess();
   };
 
   return (
