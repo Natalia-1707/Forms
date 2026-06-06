@@ -17,7 +17,7 @@ export default function Main() {
                 <button onClick={() => setModalType("uncontrolled")}>Uncontrolled Form</button>
                 <button onClick={() => setModalType("rhf")}>Open RHF Form</button>
             </div>
-            <div className="Submissions">
+            <div className="submissions">
                 <h2>Submissions</h2>
                 <div className="submission-div">
                   {submissions.map((item) => (

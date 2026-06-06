@@ -28,7 +28,14 @@ export default function Modal({title, children, onClose}: ModalProps) {
     return createPortal(
       <div className="modal-overlay" onClick={onClose}>
         <div className="modal-wrapper" onClick={(e) => e.stopPropagation()}>
-            <span className="material-symbols-outlined" onClick={onClose}>close</span>
+            <button
+                className="close-button material-symbols-outlined"
+                onClick={onClose}
+                type="button"
+                aria-label="Close modal"
+                >
+                close
+            </button>
             <h3>{title}</h3>
             <div className="forms-field">{children}</div>
         </div>
