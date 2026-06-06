@@ -6,6 +6,7 @@ export type FormValues = {
   email: string;
   country: string;
   password: string;
-  /* image: FileList; */
+  confirmPassword: string;
+  image: string;
   terms: boolean;
 };

@@ -22,10 +22,19 @@ export default function Main() {
                 <div className="submission-div">
                   {submissions.map((item) => (
                     <div key={item.id} className="submission-card">
-                    <p><b>Name:</b> {item.data.name}</p>
-                    <p><b>Email:</b> {item.data.email}</p>
-                    <p><b>Age:</b> {item.data.age}</p>
-                    <p><b>Country:</b> {item.data.country}</p>
+                      { item.data.image && (
+                        <img
+                        src={item.data.image}
+                        alt="uploaded"
+                        style={{ width: "100px", height: "100px", objectFit: "cover" }}
+                        />
+                      )}
+                      <div className="submission-card-div">
+                        <p><b>Name:</b> {item.data.name}</p>
+                        <p><b>Email:</b> {item.data.email}</p>
+                        <p><b>Age:</b> {item.data.age}</p>
+                        <p><b>Country:</b> {item.data.country}</p>
+                      </div>
                     </div>
                   ))} 
                 </div>

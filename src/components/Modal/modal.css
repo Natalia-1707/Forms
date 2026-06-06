@@ -60,7 +60,7 @@ form  {
   gap: 1rem;
 }
 
-input {
+input, select {
     padding: 0.5rem;
     font-size: 1rem;
 }

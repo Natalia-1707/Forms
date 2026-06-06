@@ -21,11 +21,19 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 1rem;
+    gap: 2rem;
 }
 
 .submission-div {
     width: 100%;
     display: flex;
-    justify-content: flex-start;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 3rem;
+}
+
+.submission-card {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
 }
