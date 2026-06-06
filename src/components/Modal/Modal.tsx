@@ -14,7 +14,6 @@ export default function Modal({title, children, onClose}: ModalProps) {
             <span className="material-symbols-outlined" onClick={onClose}>close</span>
             <h3>{title}</h3>
             <div className="forms-field">{children}</div>
-            <button>Submit</button>
         </div>
       </div>
     )

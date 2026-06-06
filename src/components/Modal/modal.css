@@ -1,4 +1,8 @@
 .modal-wrapper {
+    width: 400px;
+    max-width: 90vw;
+    padding: 20px;
+    border-radius: 12px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -18,3 +22,25 @@
   align-items: center;
   z-index: 1000;
 } 
+
+.forms-field {
+    width: 100%;
+}
+
+form  {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.input-div {
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+div label {
+    width: 70px;
+}

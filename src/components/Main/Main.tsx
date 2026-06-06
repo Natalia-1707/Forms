@@ -1,6 +1,8 @@
 import { useState } from "react";
 import "./main.css";
-import Modal from '../Modal/Modal'
+import Modal from '../modal/Modal'
+import UncontrolledForm from '../forms/UncontrolledForm'
+import RHFForm from '../forms/RHFForm'
 
 export default function Main() {
     const [modalType, setModalType] = useState<"uncontrolled" | "rhf" | null>(null);
@@ -23,9 +25,9 @@ export default function Main() {
                 onClose={() => setModalType(null)}
             >
                 {modalType === "uncontrolled" ? (
-                <p>Uncontrolled form here</p>
+                  <UncontrolledForm />
                 ) : (
-                <p>RHF form here</p>
+                  <RHFForm />
                 )}
             </Modal>
             )}
