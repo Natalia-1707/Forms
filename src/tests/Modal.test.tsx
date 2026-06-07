@@ -1,6 +1,6 @@
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
-import Modal from '../components/modal/Modal';
+import Modal from '../components/Modal/Modal';
 import { it, expect, vi } from 'vitest';
 
 it('renders modal with title', () => {

@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import './main.css';
-import Modal from '../modal/Modal';
+import Modal from '../Modal/Modal';
 import UncontrolledForm from '../forms/UncontrolledForm';
 import RHFForm from '../forms/RHFForm';
 import { useSelector } from 'react-redux';

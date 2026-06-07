@@ -1,7 +1,7 @@
 import { render, screen } from '@testing-library/react';
 import { Provider } from 'react-redux';
 import { store } from '../store/store';
-import Main from '../components/main/Main';
+import Main from '../components/Main/Main';
 import { it, expect } from 'vitest';
 import userEvent from '@testing-library/user-event';
 
