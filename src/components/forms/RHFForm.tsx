@@ -65,13 +65,13 @@ export default function RHFForm({ onSuccess }: Props) {
     <form onSubmit={handleSubmit(onSubmit)}>
       <div className="input-div">
         <label htmlFor="name">Name</label>
-        <input {...register("name")} />
+        <input id="name" {...register("name")} />
          <p className="error-message">{errors.name?.message}</p>
       </div>
 
       <div className="input-div">
         <label htmlFor="age">Age</label>
-        <input type="number" {...register("age", { valueAsNumber: true })}
+        <input id="age" type="number" {...register("age", { valueAsNumber: true })}
         />
         <p className="error-message">{errors.age?.message}</p>
       </div>
@@ -88,7 +88,7 @@ export default function RHFForm({ onSuccess }: Props) {
 
       <div className="input-div">
         <label htmlFor="email">Email</label>
-        <input {...register("email")} />
+        <input id="email" {...register("email")} />
         <p className="error-message">{errors.email?.message}</p>
       </div>
       
@@ -105,7 +105,7 @@ export default function RHFForm({ onSuccess }: Props) {
 
       <div className="input-div">
         <label htmlFor="password">Password</label>
-        <input type="password" {...register("password")} />
+        <input id="password" type="password" {...register("password")} />
         <p className="error-message">{errors.password?.message}</p>
       </div>
 
@@ -118,6 +118,7 @@ export default function RHFForm({ onSuccess }: Props) {
       <div className="input-div">
         <label htmlFor="image">Upload image</label>
         <input
+          id="image"
           type="file"
           accept="image/png, image/jpeg"
           onChange={handleImageChange}
@@ -128,7 +129,7 @@ export default function RHFForm({ onSuccess }: Props) {
 
       <div>
         <label htmlFor="terms">
-          <input type="checkbox" {...register("terms")} />
+          <input id="terms" type="checkbox" {...register("terms")} />
           I accept Terms & Conditions
         </label>
         <p className="error-message">{errors.terms?.message}</p>

@@ -12,6 +12,8 @@ export default function Main() {
 
     const submissions = useSelector((state: RootState) => state.form.submissions);
 
+    
+
     return (
         <div className="main-wrapper">
             <div className="buttons-div">
