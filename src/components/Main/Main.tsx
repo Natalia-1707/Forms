@@ -6,6 +6,7 @@ import RHFForm from '../forms/RHFForm'
 import { useSelector } from "react-redux";
 import type { RootState } from "../../store/store";
 
+
 export default function Main() {
     const [modalType, setModalType] = useState<"uncontrolled" | "rhf" | null>(null);
 

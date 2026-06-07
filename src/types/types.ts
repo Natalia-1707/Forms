@@ -7,6 +7,6 @@ export type FormValues = {
   country: string;
   password: string;
   confirmPassword: string;
-  image: string;
+  image?: string | null;
   terms: boolean;
 };

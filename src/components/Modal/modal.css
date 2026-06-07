@@ -68,3 +68,9 @@ input, select {
 div label {
     width: 70px;
 }
+
+.error-message {
+    display: flex;
+    font-size: 0.7rem;
+    color: rgb(128, 0, 0);
+}
