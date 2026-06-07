@@ -1,4 +1,4 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createSlice } from '@reduxjs/toolkit';
 
 type CountriesState = {
   countries: string[];
@@ -6,27 +6,27 @@ type CountriesState = {
 
 const initialState: CountriesState = {
   countries: [
-    "Russia",
-    "Ukraine",
-    "Belarus",
-    "Kazakhstan",
-    "Uzbekistan",
-    "Georgia",
-    "Azerbaijan",
-    "Turkey",
-    "Kyrgyzstan",
-    "Hungary",
-    "Italy",
-    "Netherlands",
-    "Germany",
-    "France",
-    "Cyprus",
-    "South Korea",
+    'Russia',
+    'Ukraine',
+    'Belarus',
+    'Kazakhstan',
+    'Uzbekistan',
+    'Georgia',
+    'Azerbaijan',
+    'Turkey',
+    'Kyrgyzstan',
+    'Hungary',
+    'Italy',
+    'Netherlands',
+    'Germany',
+    'France',
+    'Cyprus',
+    'South Korea',
   ],
 };
 
 const countriesSlice = createSlice({
-  name: "countries",
+  name: 'countries',
   initialState,
   reducers: {},
 });

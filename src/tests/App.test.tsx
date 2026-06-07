@@ -1,8 +1,8 @@
-import { render, screen } from "@testing-library/react";
-import { Provider } from "react-redux";
-import { describe, it, expect } from "vitest";
-import App from "../App";
-import { store } from "../store/store";
+import { render, screen } from '@testing-library/react';
+import { Provider } from 'react-redux';
+import { describe, it, expect } from 'vitest';
+import App from '../App';
+import { store } from '../store/store';
 
 const renderApp = () =>
   render(
@@ -11,18 +11,18 @@ const renderApp = () =>
     </Provider>
   );
 
-describe("App", () => {
-  it("renders without crashing", () => {
+describe('App', () => {
+  it('renders without crashing', () => {
     renderApp();
   });
 
-  it("renders Header", () => {
+  it('renders Header', () => {
     renderApp();
-    expect(screen.getByRole("banner")).toBeInTheDocument();
+    expect(screen.getByRole('banner')).toBeInTheDocument();
   });
 
-  it("renders Main section", () => {
+  it('renders Main section', () => {
     renderApp();
-    expect(document.querySelector(".main-wrapper")).toBeInTheDocument();
+    expect(document.querySelector('.main-wrapper')).toBeInTheDocument();
   });
 });

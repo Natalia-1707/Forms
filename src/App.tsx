@@ -1,6 +1,6 @@
-import './App.css'
+import './App.css';
 import Header from './components/Header';
-import Main from './components/main/Main'
+import Main from './components/main/Main';
 
 function App() {
   return (
@@ -8,7 +8,7 @@ function App() {
       <Header />
       <Main />
     </div>
-  )
+  );
 }
 
 export default App;

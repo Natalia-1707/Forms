@@ -19,7 +19,8 @@ a {
   color: inherit;
 }
 
-h1, h3 {
+h1,
+h3 {
   display: flex;
   font-size: 3rem;
   color: rgb(102, 0, 204);

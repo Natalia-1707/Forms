@@ -1,10 +1,10 @@
-import { createSlice } from "@reduxjs/toolkit";
-import type { PayloadAction } from "@reduxjs/toolkit";
-import type { FormValues } from "../types/types";
+import { createSlice } from '@reduxjs/toolkit';
+import type { PayloadAction } from '@reduxjs/toolkit';
+import type { FormValues } from '../types/types';
 
 type Submission = {
   id: string;
-  type: "uncontrolled" | "rhf";
+  type: 'uncontrolled' | 'rhf';
   data: FormValues;
 };
 
@@ -17,7 +17,7 @@ const initialState: FormState = {
 };
 
 const formSlice = createSlice({
-  name: "form",
+  name: 'form',
   initialState,
   reducers: {
     addSubmission(state, action: PayloadAction<Submission>) {

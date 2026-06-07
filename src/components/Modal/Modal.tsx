@@ -1,6 +1,6 @@
-import "./modal.css"
-import { useEffect } from "react";
-import { createPortal } from "react-dom";
+import './modal.css';
+import { useEffect } from 'react';
+import { createPortal } from 'react-dom';
 
 type ModalProps = {
   title: string;
@@ -8,38 +8,38 @@ type ModalProps = {
   onClose: () => void;
 };
 
-const modalRoot = document.getElementById("modal-root")!;
+const modalRoot = document.getElementById('modal-root')!;
 
-export default function Modal({title, children, onClose}: ModalProps) {
-    useEffect(() => {
-      const handleKeyDown = (e: KeyboardEvent) => {
-      if (e.key === "Escape") {
+export default function Modal({ title, children, onClose }: ModalProps) {
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') {
         onClose();
       }
-      };
+    };
 
-      window.addEventListener("keydown", handleKeyDown);
+    window.addEventListener('keydown', handleKeyDown);
 
-      return () => {
-        window.removeEventListener("keydown", handleKeyDown);
-      };
-    }, [onClose]);
+    return () => {
+      window.removeEventListener('keydown', handleKeyDown);
+    };
+  }, [onClose]);
 
-    return createPortal(
-      <div className="modal-overlay" onClick={onClose}>
-        <div className="modal-wrapper" onClick={(e) => e.stopPropagation()}>
-            <button
-                className="close-button material-symbols-outlined"
-                onClick={onClose}
-                type="button"
-                aria-label="Close modal"
-                >
-                close
-            </button>
-            <h3>{title}</h3>
-            <div className="forms-field">{children}</div>
-        </div>
-      </div>,
-      modalRoot
-    )
+  return createPortal(
+    <div className="modal-overlay" onClick={onClose}>
+      <div className="modal-wrapper" onClick={(e) => e.stopPropagation()}>
+        <button
+          className="close-button material-symbols-outlined"
+          onClick={onClose}
+          type="button"
+          aria-label="Close modal"
+        >
+          close
+        </button>
+        <h3>{title}</h3>
+        <div className="forms-field">{children}</div>
+      </div>
+    </div>,
+    modalRoot
+  );
 }

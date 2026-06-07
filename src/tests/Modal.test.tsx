@@ -1,9 +1,9 @@
-import { render, screen } from "@testing-library/react";
-import userEvent from "@testing-library/user-event";
-import Modal from "../components/modal/Modal";
-import { it, expect, vi } from "vitest";
+import { render, screen } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
+import Modal from '../components/modal/Modal';
+import { it, expect, vi } from 'vitest';
 
-it("renders modal with title", () => {
+it('renders modal with title', () => {
   render(
     <Modal title="Test Modal" onClose={() => {}}>
       Content
@@ -14,7 +14,7 @@ it("renders modal with title", () => {
   expect(screen.getByText(/content/i)).toBeInTheDocument();
 });
 
-it("calls onClose when clicking close button", async () => {
+it('calls onClose when clicking close button', async () => {
   const user = userEvent.setup();
   const onClose = vi.fn();
 
@@ -24,12 +24,12 @@ it("calls onClose when clicking close button", async () => {
     </Modal>
   );
 
-  await user.click(screen.getByRole("button", { name: /close modal/i }));
+  await user.click(screen.getByRole('button', { name: /close modal/i }));
 
   expect(onClose).toHaveBeenCalledOnce();
 });
 
-it("calls onClose on overlay click", async () => {
+it('calls onClose on overlay click', async () => {
   const user = userEvent.setup();
   const onClose = vi.fn();
 
@@ -39,7 +39,7 @@ it("calls onClose on overlay click", async () => {
     </Modal>
   );
 
-  const overlay = document.querySelector(".modal-overlay") as HTMLElement;
+  const overlay = document.querySelector('.modal-overlay') as HTMLElement;
 
   await user.click(overlay);
 
